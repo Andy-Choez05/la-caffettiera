@@ -1,21 +1,23 @@
 from django.shortcuts import render
+from core.models import Persona # Importamos el modelo creado
 
 def home(request):
-    # Aquí puedes devolver index.html o about.html, dependiendo de cuál sea tu inicio real.
-    # En los códigos anteriores vimos que about.html parece ser la historia y hay un index.html
-    return render(request, 'index.html')
+    # Obtenemos el único registro de Persona
+    persona = Persona.objects.first()
+    return render(request, "index.html", {'persona': persona}) # <-- Quitamos "main/"
 
 def about(request):
-    return render(request, 'about.html')
-
-def services(request):
-    return render(request, 'services.html')
+    persona = Persona.objects.first()
+    return render(request, "about.html", {'persona': persona}) # <-- Quitamos "main/"
 
 def store(request):
-    return render(request, 'store.html')
+    return render(request, "store.html") # <-- Quitamos "main/"
 
 def contact(request):
-    return render(request, 'contact.html')
+    return render(request, "contact.html") # <-- Quitamos "main/"
 
 def blog(request):
-    return render(request, 'blog.html')
+    return render(request, "blog.html") # <-- Quitamos "main/"
+
+def sample(request):
+    return render(request, "sample.html") # <-- Quitamos "main/"

@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
+
+    # Agrega tus aplicaciones aquí abajo:
+    'core',
+    'main',  # Asegúrate de que main también esté escrita
     'services',
 ]
 
